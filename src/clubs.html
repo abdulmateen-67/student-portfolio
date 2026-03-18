@@ -1,244 +1,228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Club Categories | UCP Clubs Portal</title>
-  <link rel="stylesheet" href="../styles/style.css" />
-  <style>
-    .category-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--card-shadow);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .category-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(26,58,92,0.15);
-    }
-
-    .category-header {
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .category-header .cat-icon {
-      font-size: 2rem;
-      width: 56px;
-      height: 56px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .cat-icon.tech    { background: rgba(45,111,163,0.12); }
-    .cat-icon.sports  { background: rgba(22,163,74,0.12);  }
-    .cat-icon.culture { background: rgba(232,160,32,0.15); }
-    .cat-icon.debate  { background: rgba(239,68,68,0.1);   }
-
-    .category-header h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.2rem; }
-    .category-header span { font-size: 0.82rem; color: var(--text-muted); }
-
-    .category-body { padding: 0 1.5rem 1.5rem; }
-    .category-body p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
-
-    .club-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .club-list li {
-      background: var(--light-bg);
-      border: 1px solid var(--border);
-      padding: 0.3rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    /* Filter bar */
-    .filter-bar {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-
-    .filter-btn {
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      border: 2px solid var(--border);
-      background: var(--white);
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .filter-btn.active, .filter-btn:hover {
-      border-color: var(--primary);
-      background: var(--primary);
-      color: var(--white);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">UCP <span>Clubs</span> Portal</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="clubs.html" class="active">Club Categories</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="join.html">Join a Club</a></li>
-      <li><a href="highlights.html">Highlights</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="page-hero">
-    <h1>Club Categories</h1>
-    <p>Explore the diverse range of student clubs at UCP — from technology and sports to culture and debate.</p>
-  </section>
-
-  <!-- MAIN CONTENT -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Browse by Category</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">UCP hosts clubs across four major categories. Click a filter to narrow your search.</p>
-
-      <!-- Filter buttons -->
-      <div class="filter-bar">
-        <button class="filter-btn active" onclick="filterCards('all', this)">All Categories</button>
-        <button class="filter-btn" onclick="filterCards('tech', this)">🖥 Technology</button>
-        <button class="filter-btn" onclick="filterCards('sports', this)">⚽ Sports</button>
-        <button class="filter-btn" onclick="filterCards('culture', this)">🎭 Cultural</button>
-        <button class="filter-btn" onclick="filterCards('debate', this)">🗣 Debate</button>
-      </div>
-
-      <!-- Category cards grid -->
-      <div class="card-grid" id="categories-grid">
-
-        <!-- Technology Clubs -->
-        <div class="category-card" data-category="tech">
-          <div class="category-header">
-            <div class="cat-icon tech">🖥</div>
-            <div>
-              <h3>Technology Clubs</h3>
-              <span>6 active clubs</span>
-            </div>
-          </div>
-          <div class="category-body">
-            <p>Technology clubs bring together students passionate about software, hardware, AI, and cyber security. Members collaborate on projects, attend hackathons, and stay ahead of industry trends.</p>
-            <ul class="club-list">
-              <li>Coding Society</li>
-              <li>Robotics Club</li>
-              <li>AI Research Group</li>
-              <li>Cyber Security Club</li>
-              <li>Web Dev Circle</li>
-              <li>Data Science Hub</li>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Club Categories | UCP Clubs Portal</title>
+        <link rel="stylesheet" href="../styles/style.css" />
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="logo">UCP <span>Clubs</span> Portal</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clubs.html" class="active">Club Categories</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="join.html">Join a Club</a></li>
+                <li><a href="highlights.html">Highlights</a></li>
             </ul>
-          </div>
-        </div>
-
-        <!-- Sports Clubs -->
-        <div class="category-card" data-category="sports">
-          <div class="category-header">
-            <div class="cat-icon sports">⚽</div>
-            <div>
-              <h3>Sports Clubs</h3>
-              <span>5 active clubs</span>
+            <div class="hamburger" onclick="toggleNav()">
+                <span></span><span></span><span></span>
             </div>
-          </div>
-          <div class="category-body">
-            <p>Sports clubs promote physical fitness, teamwork, and competitive spirit. Whether you are a seasoned athlete or a casual player, there is a club for every skill level at UCP.</p>
-            <ul class="club-list">
-              <li>Cricket Club</li>
-              <li>Football Team</li>
-              <li>Basketball League</li>
-              <li>Badminton Club</li>
-              <li>Table Tennis</li>
-            </ul>
-          </div>
-        </div>
+        </nav>
 
-        <!-- Cultural Clubs -->
-        <div class="category-card" data-category="culture">
-          <div class="category-header">
-            <div class="cat-icon culture">🎭</div>
-            <div>
-              <h3>Cultural Clubs</h3>
-              <span>5 active clubs</span>
+        <!-- HERO -->
+        <section class="page-hero">
+            <h1>Club Categories</h1>
+            <p>
+                Explore the diverse range of student clubs at UCP — from
+                technology and sports to culture and debate.
+            </p>
+        </section>
+
+        <!-- MAIN CONTENT -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Browse by Category</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">
+                    UCP hosts clubs across four major categories. Click a filter
+                    to narrow your search.
+                </p>
+
+                <!-- Filter buttons -->
+                <div class="filter-bar">
+                    <button
+                        class="filter-btn active"
+                        onclick="filterCards('all', this)"
+                    >
+                        All Categories
+                    </button>
+                    <button
+                        class="filter-btn"
+                        onclick="filterCards('tech', this)"
+                    >
+                        🖥 Technology
+                    </button>
+                    <button
+                        class="filter-btn"
+                        onclick="filterCards('sports', this)"
+                    >
+                        ⚽ Sports
+                    </button>
+                    <button
+                        class="filter-btn"
+                        onclick="filterCards('culture', this)"
+                    >
+                        🎭 Cultural
+                    </button>
+                    <button
+                        class="filter-btn"
+                        onclick="filterCards('debate', this)"
+                    >
+                        🗣 Debate
+                    </button>
+                </div>
+
+                <!-- Category cards grid -->
+                <div class="card-grid" id="categories-grid">
+                    <!-- Technology Clubs -->
+                    <div class="category-card" data-category="tech">
+                        <div class="category-header">
+                            <div class="cat-icon tech">🖥</div>
+                            <div>
+                                <h3>Technology Clubs</h3>
+                                <span>6 active clubs</span>
+                            </div>
+                        </div>
+                        <div class="category-body">
+                            <p>
+                                Technology clubs bring together students
+                                passionate about software, hardware, AI, and
+                                cyber security. Members collaborate on projects,
+                                attend hackathons, and stay ahead of industry
+                                trends.
+                            </p>
+                            <ul class="club-list">
+                                <li>Coding Society</li>
+                                <li>Robotics Club</li>
+                                <li>AI Research Group</li>
+                                <li>Cyber Security Club</li>
+                                <li>Web Dev Circle</li>
+                                <li>Data Science Hub</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Sports Clubs -->
+                    <div class="category-card" data-category="sports">
+                        <div class="category-header">
+                            <div class="cat-icon sports">⚽</div>
+                            <div>
+                                <h3>Sports Clubs</h3>
+                                <span>5 active clubs</span>
+                            </div>
+                        </div>
+                        <div class="category-body">
+                            <p>
+                                Sports clubs promote physical fitness, teamwork,
+                                and competitive spirit. Whether you are a
+                                seasoned athlete or a casual player, there is a
+                                club for every skill level at UCP.
+                            </p>
+                            <ul class="club-list">
+                                <li>Cricket Club</li>
+                                <li>Football Team</li>
+                                <li>Basketball League</li>
+                                <li>Badminton Club</li>
+                                <li>Table Tennis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cultural Clubs -->
+                    <div class="category-card" data-category="culture">
+                        <div class="category-header">
+                            <div class="cat-icon culture">🎭</div>
+                            <div>
+                                <h3>Cultural Clubs</h3>
+                                <span>5 active clubs</span>
+                            </div>
+                        </div>
+                        <div class="category-body">
+                            <p>
+                                Cultural clubs celebrate arts, heritage, and
+                                creative expression. They organise festivals,
+                                performances, and exhibitions that enrich campus
+                                life and promote cultural diversity.
+                            </p>
+                            <ul class="club-list">
+                                <li>Drama Society</li>
+                                <li>Photography Club</li>
+                                <li>Music Society</li>
+                                <li>Literary Club</li>
+                                <li>Art Studio</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Debate Societies -->
+                    <div class="category-card" data-category="debate">
+                        <div class="category-header">
+                            <div class="cat-icon debate">🗣</div>
+                            <div>
+                                <h3>Debate Societies</h3>
+                                <span>4 active clubs</span>
+                            </div>
+                        </div>
+                        <div class="category-body">
+                            <p>
+                                Debate societies sharpen critical thinking,
+                                public speaking, and logical argumentation. They
+                                participate in inter-university competitions and
+                                regularly host open forums on campus.
+                            </p>
+                            <ul class="club-list">
+                                <li>UCP Debate Society</li>
+                                <li>Model UN Club</li>
+                                <li>Public Speaking Forum</li>
+                                <li>Mock Parliament</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /card-grid -->
+
+                <div style="margin-top: 2.5rem">
+                    <a href="join.html" class="btn btn-primary"
+                        >Ready to Join? Get Started →</a
+                    >
+                </div>
             </div>
-          </div>
-          <div class="category-body">
-            <p>Cultural clubs celebrate arts, heritage, and creative expression. They organise festivals, performances, and exhibitions that enrich campus life and promote cultural diversity.</p>
-            <ul class="club-list">
-              <li>Drama Society</li>
-              <li>Photography Club</li>
-              <li>Music Society</li>
-              <li>Literary Club</li>
-              <li>Art Studio</li>
-            </ul>
-          </div>
-        </div>
+        </section>
 
-        <!-- Debate Societies -->
-        <div class="category-card" data-category="debate">
-          <div class="category-header">
-            <div class="cat-icon debate">🗣</div>
-            <div>
-              <h3>Debate Societies</h3>
-              <span>4 active clubs</span>
-            </div>
-          </div>
-          <div class="category-body">
-            <p>Debate societies sharpen critical thinking, public speaking, and logical argumentation. They participate in inter-university competitions and regularly host open forums on campus.</p>
-            <ul class="club-list">
-              <li>UCP Debate Society</li>
-              <li>Model UN Club</li>
-              <li>Public Speaking Forum</li>
-              <li>Mock Parliament</li>
-            </ul>
-          </div>
-        </div>
+        <!-- FOOTER -->
+        <footer>
+            <p>
+                &copy; 2026 <strong>UCP Student Clubs Portal</strong> &mdash;
+                Developed as part of DevOps Assignment 01
+            </p>
+        </footer>
 
-      </div><!-- /card-grid -->
+        <script>
+            function toggleNav() {
+                document.getElementById("nav-links").classList.toggle("open");
+            }
 
-      <div style="margin-top:2.5rem;">
-        <a href="join.html" class="btn btn-primary">Ready to Join? Get Started →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 <strong>UCP Student Clubs Portal</strong> &mdash; Developed as part of DevOps Assignment 01</p>
-  </footer>
-
-  <script>
-    function toggleNav() {
-      document.getElementById('nav-links').classList.toggle('open');
-    }
-
-    function filterCards(category, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('#categories-grid .category-card').forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  </script>
-</body>
+            function filterCards(category, btn) {
+                document
+                    .querySelectorAll(".filter-btn")
+                    .forEach((b) => b.classList.remove("active"));
+                btn.classList.add("active");
+                document
+                    .querySelectorAll("#categories-grid .category-card")
+                    .forEach((card) => {
+                        if (
+                            category === "all" ||
+                            card.dataset.category === category
+                        ) {
+                            card.style.display = "";
+                        } else {
+                            card.style.display = "none";
+                        }
+                    });
+            }
+        </script>
+    </body>
 </html>
