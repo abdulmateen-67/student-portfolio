@@ -302,3 +302,92 @@ footer strong { color: var(--white); }
 
   .btn { width: 100%; text-align: center; }
 }
+/* Member 2 - Events Page */
+.filter-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 0;
+}
+.filter-buttons {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.filter-btn {
+  padding: 0.4rem 1.1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 99px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.filter-btn:hover { border-color: #2563eb; color: #2563eb; }
+.filter-btn.active { background: #2563eb; border-color: #2563eb; color: #ffffff; }
+.events-section { padding: 2.5rem 0 1rem; }
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.event-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  align-items: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 4px solid #2563eb;
+}
+.event-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+.event-date-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 8px;
+  min-width: 52px;
+  padding: 0.5rem 0.4rem;
+  flex-shrink: 0;
+}
+.event-day { font-size: 1.5rem; font-weight: 700; line-height: 1; }
+.event-month { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+.event-info { flex: 1; }
+.event-info h3 { font-size: 1rem; font-weight: 600; margin: 0.35rem 0 0.4rem; }
+.event-info p { font-size: 0.85rem; color: #475569; margin-bottom: 0.7rem; line-height: 1.5; }
+.event-meta { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.78rem; color: #475569; }
+.event-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.event-badge.workshop    { background: #dbeafe; color: #1d4ed8; }
+.event-badge.competition { background: #fce7f3; color: #be185d; }
+.event-badge.meetup      { background: #d1fae5; color: #065f46; }
+.event-badge.seminar     { background: #fef3c7; color: #92400e; }
+
+/* Media Queries - Member 2 */
+@media (max-width: 768px) {
+  .events-grid { grid-template-columns: 1fr; }
+  .filter-buttons { gap: 0.4rem; }
+}
+@media (max-width: 480px) {
+  .event-card { flex-direction: column; }
+  .event-date-block { flex-direction: row; gap: 6px; min-width: unset; }
+  .event-meta { flex-direction: column; gap: 0.3rem; }
+}
