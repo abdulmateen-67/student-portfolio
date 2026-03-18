@@ -9,11 +9,11 @@ student-portfolio/
 ├── .gitignore
 ├── README.md
 ├── src/
-│   ├── index.html         # Home page (Team Lead)
-│   ├── clubs.html         # Club Categories (Member 1)
-│   ├── events.html        # Upcoming Events (Member 2)
-│   ├── join.html          # How to Join (Member 3)
-│   └── highlights.html    # Club Highlights (Member 4)
+│   ├── index.html         # Home page (Abdul Mateen [Team Lead])
+│   ├── clubs.html         # Club Categories (M. Asfand Yar)
+│   ├── events.html        # Upcoming Events (M. Ahmad)
+│   ├── join.html          # How to Join (Haroon Ashar)
+│   └── highlights.html    # Club Highlights (M. Hashaam)
 └── styles/
     └── style.css          # Shared stylesheet
 ```
@@ -22,11 +22,11 @@ student-portfolio/
 
 | Page | Description | Responsible |
 |------|-------------|-------------|
-| `index.html` | Landing page introducing the portal | Team Lead |
-| `clubs.html` | Club categories with filter functionality | Member 1 |
-| `events.html` | Upcoming events calendar | Member 2 |
-| `join.html` | Step-by-step membership guide | Member 3 |
-| `highlights.html` | Achievements and member spotlights | Member 4 |
+| `index.html` | Landing page introducing the portal | Abdul Mateen (Team Lead) |
+| `clubs.html` | Club categories with filter functionality | M. Asfand Yar |
+| `events.html` | Upcoming events calendar | M. Ahmad |
+| `join.html` | Step-by-step membership guide | Haroon Ashar |
+| `highlights.html` | Achievements and member spotlights | M. Hashaam |
 
 ## Branching Strategy
 
