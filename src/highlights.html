@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club Highlights | UCP Clubs Portal</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+  <style>
+    /* Achievement cards */
+    .achievement-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 1.5rem;
+      border-left: 5px solid var(--primary);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(26,58,92,0.15);
+    }
+
+    .achievement-card.gold   { border-left-color: #d4a017; }
+    .achievement-card.silver { border-left-color: #9a9a9a; }
+    .achievement-card.bronze { border-left-color: #b87333; }
+
+    .achievement-card .trophy { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    .achievement-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .achievement-card .year {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .achievement-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* Member spotlight */
+    .spotlight-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .spotlight-card:hover { transform: translateY(-4px); }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+    }
+
+    .spotlight-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .spotlight-card .role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .spotlight-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Timeline for history */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .timeline-item {
+      margin-bottom: 1.75rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.6rem;
+      top: 0.4rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid var(--light-bg);
+    }
+
+    .timeline-item .tl-year {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-item h4 { font-size: 0.95rem; color: var(--primary); margin-bottom: 0.3rem; }
+    .timeline-item p  { font-size: 0.87rem; color: var(--text-muted); }
+
+    @media (max-width: 600px) {
+      .achievement-card { border-left-width: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">UCP <span>Clubs</span> Portal</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="clubs.html">Club Categories</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="join.html">Join a Club</a></li>
+      <li><a href="highlights.html" class="active">Highlights</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1>Club Highlights &amp; Achievements</h1>
+    <p>Celebrating the milestones, victories, and outstanding accomplishments of UCP student clubs across all categories.</p>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Major Achievements</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Our clubs have represented UCP on regional, national, and international stages.</p>
+
+      <div class="card-grid">
+
+        <div class="achievement-card gold">
+          <div class="trophy">🥇</div>
+          <div class="year">National Debate Championship 2025</div>
+          <h3>UCP Debate Society — 1st Place</h3>
+          <p>The UCP Debate Society clinched first place at the National Intercollegiate Debate Championship, defeating 24 universities in the final round held at LUMS, Lahore.</p>
+        </div>
+
+        <div class="achievement-card gold">
+          <div class="trophy">🏆</div>
+          <div class="year">NASCON Hackathon 2025</div>
+          <h3>Coding Society — Best Innovation Award</h3>
+          <p>A four-member team from the Coding Society won the Best Innovation Award at NASCON for developing an AI-powered campus navigation system using computer vision.</p>
+        </div>
+
+        <div class="achievement-card silver">
+          <div class="trophy">🥈</div>
+          <div class="year">Punjab University Sports Fest 2025</div>
+          <h3>Cricket Club — Runners Up</h3>
+          <p>The UCP Cricket Club reached the final of the inter-university sports fest, finishing as runners-up after a thrilling last-over contest against University of Engineering & Technology.</p>
+        </div>
+
+        <div class="achievement-card bronze">
+          <div class="trophy">🎭</div>
+          <div class="year">All Pakistan Drama Festival 2025</div>
+          <h3>Drama Society — Best Direction Award</h3>
+          <p>The Drama Society's original play "Khwab aur Khak" earned the Best Direction Award at the All Pakistan Drama Festival, receiving praise for its powerful storytelling and staging.</p>
+        </div>
+
+        <div class="achievement-card">
+          <div class="trophy">📸</div>
+          <div class="year">International Youth Photography Contest 2024</div>
+          <h3>Photography Club — Top 10 Finalist</h3>
+          <p>Two UCP Photography Club members were selected as Top 10 finalists in the Global Youth Photography Contest, with their work exhibited in Karachi and online.</p>
+        </div>
+
+        <div class="achievement-card">
+          <div class="trophy">🤖</div>
+          <div class="year">Pak-China Robotics Challenge 2024</div>
+          <h3>Robotics Club — Special Recognition</h3>
+          <p>UCP Robotics Club received a Special Recognition award at the Pak-China Robotics Challenge for their autonomous line-following bot project, which was among the top 5 designs.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBER SPOTLIGHT -->
+  <section class="section" style="background:var(--white); padding-top:3rem; padding-bottom:3rem;">
+    <div class="container">
+      <h2 class="section-title">Member Spotlights</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Recognising outstanding student leaders who have made a lasting impact.</p>
+
+      <div class="card-grid">
+        <div class="spotlight-card">
+          <div class="avatar">👩‍💻</div>
+          <h3>Aiza Khan</h3>
+          <div class="role">President, Coding Society &bull; 6th Semester CS</div>
+          <p>Led the team that won the NASCON hackathon and organised three inter-university coding competitions this year.</p>
+        </div>
+
+        <div class="spotlight-card">
+          <div class="avatar">🎤</div>
+          <h3>Hassan Raza</h3>
+          <div class="role">Captain, UCP Debate Society &bull; 5th Semester BBA</div>
+          <p>Guided the debate team to the national championship and personally mentored 12 junior debaters this semester.</p>
+        </div>
+
+        <div class="spotlight-card">
+          <div class="avatar">🏏</div>
+          <h3>Bilal Tariq</h3>
+          <div class="role">Captain, Cricket Club &bull; 7th Semester EE</div>
+          <p>Led UCP cricket to their best-ever performance in inter-university competitions, reaching the Punjab-level final.</p>
+        </div>
+
+        <div class="spotlight-card">
+          <div class="avatar">🎨</div>
+          <h3>Sana Mirza</h3>
+          <div class="role">Head, Art Studio &bull; 4th Semester Design</div>
+          <p>Curated UCP's first public art installation in the main block and organised three community mural projects on campus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY TIMELINE -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Club Milestones</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">A brief history of growth and achievements since clubs were established at UCP.</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="tl-year">2019</div>
+          <h4>First Student Clubs Established</h4>
+          <p>The Coding Society and Drama Society became the first two officially recognised student clubs at UCP, with a combined membership of 45 students.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">2021</div>
+          <h4>First National-Level Win</h4>
+          <p>UCP Debate Society won the Northern Regional Debate Championship for the first time, putting the university on the national debate map.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">2022</div>
+          <h4>Clubs Portal Launched</h4>
+          <p>The Student Affairs Office launched this online portal to centralise information about all clubs, events, and membership across UCP.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">2023</div>
+          <h4>20 Clubs Milestone</h4>
+          <p>UCP reached 20 officially registered student clubs, with combined membership exceeding 1,000 students for the first time.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">2025</div>
+          <h4>National Championship Victory</h4>
+          <p>The debate team won the National Intercollegiate Championship — the highest competitive achievement in UCP clubs history to date.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:2.5rem;">
+        <a href="join.html" class="btn btn-primary">Become Part of the Story →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <strong>UCP Student Clubs Portal</strong> &mdash; Developed as part of DevOps Assignment 01</p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

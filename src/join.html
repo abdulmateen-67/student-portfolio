@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Join | UCP Clubs Portal</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+  <style>
+    /* Step timeline */
+    .steps-timeline {
+      position: relative;
+      padding-left: 0;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-connector {
+      position: absolute;
+      left: 23px;
+      top: 48px;
+      width: 2px;
+      height: calc(100% + 4px);
+      background: var(--border);
+    }
+
+    .step-item:last-child .step-connector { display: none; }
+
+    .step-content {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 1.25rem 1.5rem;
+      flex: 1;
+    }
+
+    .step-content h3 {
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-content p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* Meeting schedule table */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+
+    .schedule-table th {
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.9rem 1rem;
+      font-size: 0.85rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .schedule-table td {
+      padding: 0.85rem 1rem;
+      font-size: 0.875rem;
+      color: var(--text-dark);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .schedule-table tr:last-child td { border-bottom: none; }
+    .schedule-table tr:nth-child(even) td { background: var(--light-bg); }
+
+    /* FAQ accordion */
+    .faq-item {
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--secondary);
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.25rem 1rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
+    @media (max-width: 600px) {
+      .schedule-table { font-size: 0.8rem; }
+      .schedule-table th, .schedule-table td { padding: 0.65rem 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">UCP <span>Clubs</span> Portal</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="clubs.html">Club Categories</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="join.html" class="active">Join a Club</a></li>
+      <li><a href="highlights.html">Highlights</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1>How to Join a Club</h1>
+    <p>Getting involved is easy. Follow our simple steps to register, meet your team, and start making an impact.</p>
+  </section>
+
+  <!-- STEPS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Registration Steps</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Complete these five steps to officially become a member of any UCP student club.</p>
+
+      <div class="steps-timeline">
+
+        <div class="step-item">
+          <div>
+            <div class="step-number">1</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-content">
+            <h3>Explore Available Clubs</h3>
+            <p>Browse the <a href="clubs.html" style="color:var(--accent);font-weight:500;">Club Categories</a> page to discover all active clubs and societies at UCP. Read about each club's focus area and current membership.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div>
+            <div class="step-number">2</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-content">
+            <h3>Submit Your Interest Form</h3>
+            <p>Visit the Student Affairs Office (SAO) or the club's dedicated desk during orientation week to fill out the membership interest form. You can also fill it out online through the UCP student portal.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div>
+            <div class="step-number">3</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-content">
+            <h3>Attend an Orientation Session</h3>
+            <p>Each club holds a brief orientation at the start of each semester. Attend to meet the club president, understand the code of conduct, and learn about ongoing and upcoming activities.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div>
+            <div class="step-number">4</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-content">
+            <h3>Pay the Membership Fee</h3>
+            <p>A nominal semester membership fee of PKR 200–500 (varies by club) is required. This is paid at the Finance Office and a receipt is provided. Some clubs offer fee waivers — ask the club coordinator.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div>
+            <div class="step-number">5</div>
+          </div>
+          <div class="step-content">
+            <h3>Receive Your Member ID &amp; Start Participating</h3>
+            <p>Once confirmed, you will receive a digital member ID via email. You are now officially a club member. Attend weekly meetings, participate in events, and contribute to club projects!</p>
+          </div>
+        </div>
+
+      </div><!-- /steps -->
+
+    </div>
+  </section>
+
+  <!-- MEETING SCHEDULE -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 class="section-title">Weekly Meeting Schedule</h2>
+      <div class="divider"></div>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Club</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Venue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Coding Society</td>
+            <td>Monday</td>
+            <td>4:00 – 5:30 PM</td>
+            <td>CS Lab 1, Block B</td>
+          </tr>
+          <tr>
+            <td>Drama Society</td>
+            <td>Tuesday</td>
+            <td>3:30 – 5:00 PM</td>
+            <td>Auditorium Hall</td>
+          </tr>
+          <tr>
+            <td>Cricket Club</td>
+            <td>Wednesday</td>
+            <td>5:00 – 7:00 PM</td>
+            <td>UCP Sports Ground</td>
+          </tr>
+          <tr>
+            <td>UCP Debate Society</td>
+            <td>Thursday</td>
+            <td>4:30 – 6:00 PM</td>
+            <td>Seminar Room 2</td>
+          </tr>
+          <tr>
+            <td>Photography Club</td>
+            <td>Friday</td>
+            <td>2:00 – 3:30 PM</td>
+            <td>Media Lab, Library</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="divider"></div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">Can I join more than one club?</div>
+        <div class="faq-answer">Yes! There is no limit to the number of clubs you can join. However, we recommend starting with one or two to balance your academic commitments.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">Is membership open to all semesters?</div>
+        <div class="faq-answer">Yes, clubs are open to students from all semesters — from 1st semester freshers to final-year students. Some leadership positions may require you to be at least in your 3rd semester.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">What if I miss the orientation session?</div>
+        <div class="faq-answer">Contact the club coordinator directly via email or visit the Student Affairs Office. Late registrations are usually accepted within the first two weeks of the semester.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">Can I start my own club?</div>
+        <div class="faq-answer">Absolutely! Submit a Club Formation Proposal to the Student Affairs Office. You will need at least 15 founding members, a faculty advisor, and an approved charter to proceed.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <strong>UCP Student Clubs Portal</strong> &mdash; Developed as part of DevOps Assignment 01</p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+
+    function toggleFAQ(item) {
+      item.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

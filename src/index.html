@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | UCP Clubs Portal</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+  <style>
+    /* Hero — Home page specific */
+    .home-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #0e2a46 40%, var(--accent) 100%);
+      color: var(--white);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .home-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .home-hero p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+
+    .hero-cta { position: relative; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* Feature cards row */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-top: -3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .feature-card:hover { transform: translateY(-5px); }
+
+    .feature-card .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .feature-card h3 { font-size: 1rem; color: var(--primary); margin-bottom: 0.4rem; }
+    .feature-card p  { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* Stats band */
+    .stats-band {
+      background: var(--primary);
+      color: var(--white);
+      padding: 3rem 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    .stat-label { font-size: 0.9rem; opacity: 0.8; margin-top: 0.25rem; }
+
+    /* Nav quick links */
+    .quick-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">UCP <span>Clubs</span> Portal</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="clubs.html">Club Categories</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="join.html">Join a Club</a></li>
+      <li><a href="highlights.html">Highlights</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="home-hero">
+    <h1>Welcome to the UCP<br>Student Clubs Portal</h1>
+    <p>Discover your passion, meet like-minded peers, and make your university life unforgettable through our vibrant student clubs and societies.</p>
+    <div class="hero-cta">
+      <a href="join.html" class="btn btn-secondary">Join a Club</a>
+      <a href="clubs.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.6);color:var(--white);">Explore Clubs</a>
+    </div>
+  </section>
+
+  <!-- FEATURE CARDS -->
+  <div class="container">
+    <div class="features">
+      <div class="feature-card">
+        <div class="icon">🎯</div>
+        <h3>Club Categories</h3>
+        <p>Tech, sports, culture, debate — find your perfect fit.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📅</div>
+        <h3>Upcoming Events</h3>
+        <p>Workshops, competitions, meetups and more.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🤝</div>
+        <h3>Easy to Join</h3>
+        <p>Simple steps to register and become an active member.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🏆</div>
+        <h3>Club Highlights</h3>
+        <p>Achievements, awards, and success stories.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Why Join a Student Club?</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Student clubs at UCP are more than just extracurricular — they shape careers, build friendships, and develop real-world skills.</p>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Skill Development</h3>
+          <p>Clubs provide hands-on experience in leadership, teamwork, communication, and domain-specific technical skills that complement your academics.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌍</div>
+          <h3>Networking</h3>
+          <p>Build connections with students from all departments, alumni, and industry professionals who actively engage with our vibrant club ecosystem.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💡</div>
+          <h3>Innovation & Creativity</h3>
+          <p>From hackathons to art fests, clubs are the hotbed of new ideas, projects, and initiatives that can turn into real-world achievements.</p>
+        </div>
+      </div>
+
+      <div class="quick-links">
+        <a href="clubs.html" class="btn btn-primary">Browse Club Categories</a>
+        <a href="events.html" class="btn btn-outline">View Upcoming Events</a>
+        <a href="highlights.html" class="btn btn-outline">See Highlights</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="stats-band">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Active Clubs</div>
+      </div>
+      <div>
+        <div class="stat-number">1,500+</div>
+        <div class="stat-label">Student Members</div>
+      </div>
+      <div>
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Events per Year</div>
+      </div>
+      <div>
+        <div class="stat-number">30+</div>
+        <div class="stat-label">Awards Won</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <strong>UCP Student Clubs Portal</strong> &mdash; Developed as part of DevOps Assignment 01</p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

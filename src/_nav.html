@@ -1,0 +1,20 @@
+<!-- Shared nav snippet (copy into each page) -->
+<nav class="navbar">
+  <div class="logo">UCP <span>Clubs</span> Portal</div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="clubs.html">Club Categories</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="join.html">Join a Club</a></li>
+    <li><a href="highlights.html">Highlights</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<script>
+function toggleNav() {
+  document.getElementById('nav-links').classList.toggle('open');
+}
+</script>
